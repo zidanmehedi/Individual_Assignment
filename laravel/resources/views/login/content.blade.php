@@ -17,14 +17,30 @@
                             {{session('msg')}}
                         </div>
                         @endif
+                         @if($errors->has('username'))
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" name="username">
+                            <input type="text" class="form-control" name="username"  style="border-color:red">
+                            <small class="form-text"><font color='red'>* {{$errors->first('username')}}</font></small>   
                         </div>
+                         @else
+                         <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" name="username" value="{{old('username')}}">
+                        </div>
+                        @endif
+                        @if($errors->has('password'))
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" name="password">
+                            <input type="password" class="form-control" name="password"  style="border-color:red">
+                            <small class="form-text"><font color='red'>* {{$errors->first('password')}}</font></small>   
                         </div>
+                        @else
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" name="password"> 
+                        </div>
+                        @endif
                         <div class="form-group">
                             <input class="btn btn-primary btn-sm" type="submit" name="login" value="Login">
                         </div>
