@@ -23,6 +23,8 @@ class loginController extends Controller
                         ->where('password', $req->password)
                         ->first();
             if($user!=null){
+                $req->session()->put('username',$req->username);
+                $req->session()->put('id',$user->id);
                 if($user->tid=="1"){
                      return redirect()->route('home.admin');
                 }

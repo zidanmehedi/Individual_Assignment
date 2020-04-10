@@ -12,44 +12,100 @@
                 <div style="padding:10px;">
                     <form action="" method="post">
                         @csrf()
+                        @if($errors->has('name'))
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" name="name">
+                            <input type="text" class="form-control" name="name" style="border-color:red">
+                            <small class="form-text"><font color='red'>* {{$errors->first('name')}}</font></small> 
                         </div>
+                        @else
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" name="name" value="{{old('name')}}">
+                        </div>
+                        @endif
+                        @if($errors->has('email'))
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" name="email">
+                            <input type="text" class="form-control" name="email" style="border-color:red">
+                            <small class="form-text"><font color='red'>* {{$errors->first('email')}}</font></small> 
                         </div>
+                        @else
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="email" value="{{old('email')}}">
+                        </div>
+                        @endif
+                        @if($errors->has('address'))
                         <div class="form-group">
                             <label for="address">Address</label>
-                            <textarea name="address" class="form-control" rows="3"></textarea>
+                            <textarea name="address" class="form-control" rows="3" style="border-color:red"></textarea>
+                            <small class="form-text"><font color='red'>* {{$errors->first('address')}}</font></small> 
                         </div>
+                        @else
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea name="address" class="form-control" rows="3">{{old('address')}}</textarea>
+                        </div>
+                        @endif
                         <div class="row">
                             <div class="col">
+                               @if($errors->has('contact'))
                                 <div class="form-group">
-                                    <label for="email">Contact</label>
-                                    <input type="text" class="form-control" name="contact">
+                                    <label for="contact">Contact</label>
+                                    <input type="text" class="form-control" name="contact"  style="border-color:red">
+                                    <small class="form-text"><font color='red'>* {{$errors->first('contact')}}</font></small>   
                                 </div>
+                                @else
+                                <div class="form-group">
+                                    <label for="contact">Contact</label>
+                                    <input type="text" class="form-control" name="contact" value="{{old('contact')}}">
+                                </div>
+                                @endif
                             </div>
                             <div class="col">
+                                @if($errors->has('username'))
                                 <div class="form-group">
                                     <label for="username">Username</label>
-                                    <input type="text" class="form-control" name="username">
+                                    <input type="text" class="form-control" name="username"  style="border-color:red">
+                                    <small class="form-text"><font color='red'>* {{$errors->first('username')}}</font></small>   
                                 </div>
+                                 @else
+                                 <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control" name="username" value="{{old('username')}}">
+                                </div>
+                                @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" name="password">
-                                </div>
+                                @if($errors->has('password'))
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="text" class="form-control" name="password"  style="border-color:red">
+                                        <small class="form-text"><font color='red'>* {{$errors->first('password')}}</font></small>   
+                                    </div>
+                                 @else
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" name="password">
+                                    </div>
+                                 @endif
                             </div>
                             <div class="col">
-                                <div class="form-group">
-                                    <label for="confirmpassword">Confirm Password</label>
-                                    <input type="password" class="form-control" name="conpass">
-                                </div>
+                                 @if($errors->has('conpass'))
+                                    <div class="form-group">
+                                        <label for="conpass">Confirm Password</label>
+                                        <input type="text" class="form-control" name="conpass"  style="border-color:red">
+                                        <small class="form-text"><font color='red'>* {{$errors->first('conpass')}}</font></small>   
+                                    </div>
+                                 @else
+                                    <div class="form-group">
+                                        <label for="conpass">Confirm Password</label>
+                                        <input type="conpass" class="form-control" name="conpass">
+                                    </div>
+                                 @endif
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -65,9 +121,14 @@
                                     <input class="form-check-input" type="radio" name="role" id="admin" value="2">
                                     <label class="form-check-label" for="member">Member</label>
                                 </div>
+                                 @if($errors->has('role'))
+                                <div class="form-check form-check-inline">
+                                    <small for="error"><font color='red'>* {{$errors->first('role')}}</font></small>
+                                </div>
+                                @endif
                                 <div class="form-group mt-4" style="text-align:center; width:100%">
                                     <input class="btn btn-primary" type="submit" name="register" value="Register" style="width:200px">
-                                </div>
+                                </div>      
                             </div>
                         </div>
                     </form>
