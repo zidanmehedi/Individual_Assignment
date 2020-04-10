@@ -12,6 +12,11 @@
                 <div style="padding:10px;">
                     <form action="" method="post">
                         @csrf()
+                        @if(session()->has('msg'))
+                        <div class="alert alert-warning" role="alert" style="text-align:center">
+                            {{session('msg')}}
+                        </div>
+                        @endif
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" class="form-control" name="username">

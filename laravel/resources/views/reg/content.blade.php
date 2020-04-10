@@ -10,7 +10,7 @@
                     <label for="title"><strong>Registration</strong></label>
                 </div>
                 <div style="padding:10px;">
-                    <form action="">
+                    <form action="" method="post">
                         @csrf()
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -22,7 +22,7 @@
                         </div>
                         <div class="form-group">
                             <label for="address">Address</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea name="address" class="form-control" rows="3"></textarea>
                         </div>
                         <div class="row">
                             <div class="col">
@@ -52,8 +52,23 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group mt-4" style="text-align:center; width:100%">
-                            <input class="btn btn-primary" type="button" name="login" value="Register" style="width:200px">
+                        <div class="row mt-3">
+                            <div class="col">
+                                <div class="form-check form-check-inline">
+                                    <label for="address">Register As:</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="role" id="admin" value="1">
+                                    <label class="form-check-label" for="admin">Admin</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="role" id="admin" value="2">
+                                    <label class="form-check-label" for="member">Member</label>
+                                </div>
+                                <div class="form-group mt-4" style="text-align:center; width:100%">
+                                    <input class="btn btn-primary" type="submit" name="register" value="Register" style="width:200px">
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
