@@ -26,7 +26,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $users = user::where('tid',2)->get();
+        return view('admin.memberList.content', ['users'=>$users]);
     }
 
     /**
@@ -63,9 +64,11 @@ class UserController extends Controller
      * @param  \App\user  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(user $user)
+    public function show($user)
     {
-        //
+        $getUser = user::find($user);
+        //echo $getUser->name;
+        return view('admin.memberDetails.content', $getUser);
     }
 
     /**
@@ -113,8 +116,10 @@ class UserController extends Controller
      * @param  \App\user  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(user $user)
+    public function destroy($user)
     {
-        //
+        user::destroy($user);
+        //echo $getUser->name;
+        return redirect('user/create');
     }
 }
