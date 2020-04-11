@@ -24,8 +24,12 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $req)
     {
+        if($req->session()->get('id')==3){
+            $blog = DB::table('blogs')->join('user_info','user_info.id','blogs.uid')->get();
+            return view('admin.blogHistory.content', ['blog'=>$blog]);
+        }
         $blog = DB::table('blogs')->join('user_info','user_info.id','blogs.uid')->get();
         return view('member.blogHistory.content', ['blog'=>$blog]);
     }
