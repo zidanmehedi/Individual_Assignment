@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\blog;
+use App\user;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
 {
@@ -24,7 +26,8 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        $blog = DB::table('blogs')->join('user_info','user_info.id','blogs.uid')->get();
+        return view('member.blogHistory.content', ['blog'=>$blog]);
     }
 
     /**

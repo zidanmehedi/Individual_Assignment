@@ -5,24 +5,26 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12" style="padding:0px;">
-            <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+           <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                 <a class="navbar-brand" href="#"><strong>Rent A Vehicle</strong></a>
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
                         <a class="nav-link active" href="{{url('vehicle/create')}}">Vehicle List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{url('order/create')}}">My Orders</a>
+                        <a class="nav-link active" href="#">My Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('blog')}}">Blog</a>
+                        <a class="nav-link" href="{{url('blog')}}">Post Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('blog/create')}}">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout.index')}}">Logout</a>
                     </li>
                 </ul>
-            </nav>
-        </div>
+            </nav>        </div>
         <div class="container">
             <div class="row">
                 @if(session()->has('update'))
