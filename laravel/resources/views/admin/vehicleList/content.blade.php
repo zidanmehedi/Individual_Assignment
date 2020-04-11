@@ -37,6 +37,7 @@
                                 <th>Name</th>
                                 <th>Category</th>
                                 <th>Cost/hour</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -47,7 +48,8 @@
                                 <td>{{$v->vname}}</td>
                                 <td>{{$v->cat_name}}</td>
                                 <td>{{$v->cost}}</td>
-                                <td><a class="nav-link" href="{{url('vehicle/'.$v->vid)}}">View</a></td>
+                                <td>{{$v->status}}</td>
+                                <td><a class="nav-link" href="{{url('vehicle/'.$v->vid)}}">View</a><a href="{{route('update.index',$v->vid)}}">Update</a></td>
                             </tr>
                             @endforeach
                         </tbody>

@@ -12,7 +12,7 @@
                         <a class="nav-link active" href="{{url('vehicle')}}">Add Car</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Car List</a>
+                        <a class="nav-link active" href="{{route('update.carlist')}}">Car List</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('user/create')}}">Member List</a>

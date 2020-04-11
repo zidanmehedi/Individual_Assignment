@@ -32,10 +32,6 @@ class VehicleController extends Controller
         $veh = DB::table('vehicles')
                  ->join('category','vehicles.cat_id','=','category.cat_id')
                  ->get();
-        if($req->session()->get('id')==1)
-        {
-            return view('admin.vehicleList.content', ['veh'=>$veh]);
-        }
         return view('member.vehicleList.content', ['veh'=>$veh]);
         //print_r($veh);
     }
@@ -104,9 +100,12 @@ class VehicleController extends Controller
      * @param  \App\vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, vehicle $vehicle)
+    public function update(Request $request, $vehicle)
     {
-        //
+        $update = vehicle::find($vehicle);
+        $update->status=$request->status;
+        $update->save();
+        return redirect()->route('update.carlist');
     }
 
     /**
