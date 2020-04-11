@@ -15,7 +15,7 @@
                         <a class="nav-link active" href="{{url('order/create')}}">My Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link" href="{{url('blog')}}">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout.index')}}">Logout</a>

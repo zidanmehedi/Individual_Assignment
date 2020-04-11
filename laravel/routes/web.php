@@ -28,3 +28,4 @@ Route::resource('user', 'UserController');
 Route::resource('vehicle', 'VehicleController');
 Route::resource('category', 'CategoryController');
 Route::resource('order', 'OrderController');
+Route::resource('blog', 'BlogController');
