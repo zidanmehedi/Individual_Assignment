@@ -29,7 +29,11 @@ class VehicleController extends Controller
     public function create()
         
     {
-        
+        $veh = DB::table('vehicles')
+                 ->join('category','vehicles.cat_id','=','category.cat_id')
+                 ->get();
+        return view('admin.vehicleList.content', ['veh'=>$veh]);
+        //print_r($veh);
     }
 
     /**
@@ -65,9 +69,14 @@ class VehicleController extends Controller
      * @param  \App\vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function show(vehicle $vehicle)
+    public function show($vehicle)
     {
-        //
+        $veh = DB::table('vehicles')
+                 ->join('category','vehicles.cat_id','=','category.cat_id')
+                 ->where('vehicles.vid',$vehicle)
+                 ->first();
+        return view('admin.vehicleDetails.content', ['veh'=>$veh]);
+        //print_r($veh);
     }
 
     /**
@@ -99,8 +108,10 @@ class VehicleController extends Controller
      * @param  \App\vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function destroy(vehicle $vehicle)
+    public function destroy($vehicle)
     {
-        //
+        vehicle::destroy($vehicle);
+        //echo $getUser->name;
+        return redirect('vehicle/create');
     }
 }

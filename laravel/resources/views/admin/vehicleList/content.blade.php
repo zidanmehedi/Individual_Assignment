@@ -1,4 +1,4 @@
-@extends('admin/home/index')
+@extends('admin/vehicleList/index')
 
 
 @section('content')
@@ -29,27 +29,25 @@
         <div class="container justify-content-lg-center">
             <div class="row">
                 <div class="col">
-                   <div class="mt-4" style="text-align:center;font-size:30px"><strong>Members List</strong></div>
-                    <table class="table table-sm table-light table-hover mt-4" style="text-align:center">
+                   <div class="mt-4" style="text-align:center;font-size:30px"><strong>Vehicles List</strong></div>
+                    <table  class="table table-sm table-light table-hover mt-4" style="text-align:center; vertical-align: bottom;">
                         <thead class="thead-light">
                             <tr>
-                                <th>UserId</th>
+                                <th>Image</th>
                                 <th>Name</th>
-                                <th>Email</th>
-                                <th>Address</th>
-                                <th>Contact</th>
+                                <th>Category</th>
+                                <th>Cost/hour</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($users as $user)
+                            @foreach($veh as $v)
                             <tr>
-                                <td>{{$user->username}}</td>
-                                <td>{{$user->name}}</td>
-                                <td>{{$user->email}}</td>
-                                <td>{{$user->address}}</td>
-                                <td>{{$user->contact}}</td>
-                                <td><a class="nav-link" href="{{url('user/'.$user->id)}}">View</a></td>
+                                <td><img src="/upload/{{$v->image}}" alt="vehicle" height="60px" width="100px"  style="border:2px solid black;box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0, 0, 0, 0.50) "></td>
+                                <td>{{$v->name}}</td>
+                                <td>{{$v->cat_name}}</td>
+                                <td>{{$v->cost}}</td>
+                                <td><a class="nav-link" href="{{url('vehicle/'.$v->vid)}}">View</a></td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -61,5 +59,5 @@
 </div>
 @endsection
 @section('title')
-Admin Home
+Vehicle List
 @endsection
