@@ -12,7 +12,7 @@
                         <a class="nav-link active" href="{{url('vehicle/create')}}">Vehicle List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">My Orders</a>
+                        <a class="nav-link active" href="{{url('order/create')}}">My Orders</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Blog</a>

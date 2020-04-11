@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\order;
+use App\vehicle;
+use App\user;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -22,9 +25,15 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $req)
     {
-        //
+        $order = DB::table('orders')
+                    ->join('vehicles','orders.vid','=','vehicles.vid')
+                    ->join('user_info','user_info.id','=','orders.uid')
+                    ->where('uid',$req->session()->get('id'))
+                    ->get();
+        //print_r($order);
+        return view('member.orderHistory.content', ['order'=>$order]);
     }
 
     /**

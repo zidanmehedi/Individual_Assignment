@@ -41,7 +41,7 @@
                             @foreach($veh as $v)
                             <tr>
                                 <td><img src="/upload/{{$v->image}}" alt="vehicle" height="60px" width="100px" style="border:2px solid black;box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0, 0, 0, 0.50) "></td>
-                                <td>{{$v->name}}</td>
+                                <td>{{$v->vname}}</td>
                                 <td>{{$v->cat_name}}</td>
                                 <td>{{$v->cost}}</td>
                                 <td><a class="nav-link" href="{{url('vehicle/'.$v->vid)}}">View</a></td>

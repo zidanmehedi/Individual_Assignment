@@ -1,4 +1,4 @@
-@extends('admin/vehicleList/index')
+@extends('member/vehicleList/index')
 
 
 @section('content')
@@ -6,19 +6,16 @@
     <div class="row">
         <div class="col-lg-12" style="padding:0px;">
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-                <a class="navbar-brand" href="#"><strong>Admin Panel</strong></a>
+                <a class="navbar-brand" href="#"><strong>Rent A Vehicle</strong></a>
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{url('vehicle')}}">Add Car</a>
+                        <a class="nav-link active" href="{{url('vehicle/create')}}">Vehicle List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{url('vehicle/create')}}">Car List</a>
+                        <a class="nav-link active" href="#">My Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('user/create')}}">Member List</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Blog</a>
+                        <a class="nav-link" href="#">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout.index')}}">Logout</a>
@@ -33,21 +30,21 @@
                     <table class="table table-sm table-light table-hover mt-4" style="text-align:center; vertical-align: bottom;">
                         <thead class="thead-light">
                             <tr>
-                                <th>Image</th>
                                 <th>Name</th>
-                                <th>Category</th>
-                                <th>Cost/hour</th>
-                                <th>Action</th>
+                                <th>Time</th>
+                                <th>Total Cost</th>
+                                <th>Date</th>
+                                <th>Payment Method</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($veh as $v)
+                            @foreach($order as $v)
                             <tr>
-                                <td><img src="/upload/{{$v->image}}" alt="vehicle" height="60px" width="100px" style="border:2px solid black;box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0, 0, 0, 0.50) "></td>
                                 <td>{{$v->vname}}</td>
-                                <td>{{$v->cat_name}}</td>
-                                <td>{{$v->cost}}</td>
-                                <td><a class="nav-link" href="{{url('vehicle/'.$v->vid)}}">View</a></td>
+                                <td>{{$v->period}}</td>
+                                <td>{{$v->total_cost}}</td>
+                                <td>{{$v->time}}</td>
+                                <td>{{$v->payment}}</td>
                             </tr>
                             @endforeach
                         </tbody>

@@ -57,7 +57,7 @@ class VehicleController extends Controller
             $file = $request->file('img');
             $veh = new vehicle();
             $veh->image = $file->getClientOriginalName();
-            $veh->name = $request->name;
+            $veh->vname = $request->name;
             $veh->description = $request->description;
             $veh->cost = $request->cost;
             $veh->cat_id = $cat->cat_id;
