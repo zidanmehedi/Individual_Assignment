@@ -9,10 +9,13 @@
                 <a class="navbar-brand" href="#"><strong>Rent A Vehicle</strong></a>
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Active</a>
+                        <a class="nav-link active" href="{{url('vehicle/create')}}">Vehicle List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link active" href="#">My Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout.index')}}">Logout</a>

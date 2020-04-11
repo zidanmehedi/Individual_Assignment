@@ -26,13 +26,17 @@ class VehicleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $req)
         
     {
         $veh = DB::table('vehicles')
                  ->join('category','vehicles.cat_id','=','category.cat_id')
                  ->get();
-        return view('admin.vehicleList.content', ['veh'=>$veh]);
+        if($req->session()->get('id')==1)
+        {
+            return view('admin.vehicleList.content', ['veh'=>$veh]);
+        }
+        return view('member.vehicleList.content', ['veh'=>$veh]);
         //print_r($veh);
     }
 
@@ -69,13 +73,16 @@ class VehicleController extends Controller
      * @param  \App\vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function show($vehicle)
+    public function show(Request $req,$vehicle)
     {
         $veh = DB::table('vehicles')
                  ->join('category','vehicles.cat_id','=','category.cat_id')
                  ->where('vehicles.vid',$vehicle)
                  ->first();
-        return view('admin.vehicleDetails.content', ['veh'=>$veh]);
+        if($req->session()->get('id')==1){
+            return view('admin.vehicleDetails.content', ['veh'=>$veh]);
+        }
+        return view('member.vehicleDetails.content', ['veh'=>$veh]);
         //print_r($veh);
     }
 

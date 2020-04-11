@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/login', 'loginController@index')->name('login.index');
 Route::get('/logout', 'logoutController@index')->name('logout.index');
 Route::post('/login', 'loginController@verify');
+Route::post('/vehicle/rent', 'rentController@rent');
 Route::get('admin/home', 'homeController@adminIndex')->name('home.admin');
 Route::get('member/home', 'homeController@memberIndex')->name('home.member');
 Route::resource('user', 'UserController');

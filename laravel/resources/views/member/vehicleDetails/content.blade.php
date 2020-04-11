@@ -46,12 +46,18 @@
                                     <input type="text" class="form-control" name="category" value="{{$veh->cat_name}}" readonly>
                                 </div>
                             </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="contact">Rend Period(Hour)</label>
+                                    <input type="text" class="form-control" name="period">
+                                </div>
+                            </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col">
                                 <div class="form-group mt-4" style=" width:100%">
                                     <input class="btn btn-primary btn-sm" type="button" name="back" value="Back" onclick="backToMemberList()">&emsp;
-                                    <input class="btn btn-danger btn-sm" type="submit" name="delete" value="Remove">
+                                    <input class="btn btn-success btn-sm" type="submit" name="rent" value="Rent">
                                 </div>
                             </div>
                         </div>

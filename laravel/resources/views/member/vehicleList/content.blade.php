@@ -1,4 +1,4 @@
-@extends('admin/vehicleList/index')
+@extends('member/vehicleList/index')
 
 
 @section('content')
@@ -6,19 +6,16 @@
     <div class="row">
         <div class="col-lg-12" style="padding:0px;">
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-                <a class="navbar-brand" href="#"><strong>Admin Panel</strong></a>
+                <a class="navbar-brand" href="#"><strong>Rent A Vehicle</strong></a>
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{url('vehicle')}}">Add Car</a>
+                        <a class="nav-link active" href="{{url('vehicle/create')}}">Vehicle List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{url('vehicle/create')}}">Car List</a>
+                        <a class="nav-link active" href="#">My Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('user/create')}}">Member List</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Blog</a>
+                        <a class="nav-link" href="#">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout.index')}}">Logout</a>
