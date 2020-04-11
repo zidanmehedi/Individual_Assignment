@@ -18,6 +18,9 @@
                         <a class="nav-link" href="{{url('user/create')}}">Member List</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" href="{{url('order/create')}}">All Orders</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="#">Blog</a>
                     </li>
                     <li class="nav-item">

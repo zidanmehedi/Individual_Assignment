@@ -27,13 +27,23 @@ class OrderController extends Controller
      */
     public function create(Request $req)
     {
-        $order = DB::table('orders')
+        if($req->session()->get('id')==1){
+            $order = DB::table('orders')
+                    ->join('vehicles','orders.vid','=','vehicles.vid')
+                    ->join('user_info','user_info.id','=','orders.uid')
+                    ->get();
+            //print_r($order);
+            return view('admin.orderHistory.content', ['order'=>$order]);
+        }else
+        {
+            $order = DB::table('orders')
                     ->join('vehicles','orders.vid','=','vehicles.vid')
                     ->join('user_info','user_info.id','=','orders.uid')
                     ->where('uid',$req->session()->get('id'))
                     ->get();
-        //print_r($order);
-        return view('member.orderHistory.content', ['order'=>$order]);
+            //print_r($order);
+            return view('member.orderHistory.content', ['order'=>$order]);
+        }
     }
 
     /**
