@@ -9,7 +9,7 @@
                 <a class="navbar-brand" href="#"><strong>Admin Panel</strong></a>
                 <ul class="nav justify-content-end">
                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Add Car</a>
+                        <a class="nav-link active" href="{{url('vehicle')}}">Add Car</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Car List</a>

@@ -21,3 +21,5 @@ Route::post('/login', 'loginController@verify');
 Route::get('admin/home', 'homeController@adminIndex')->name('home.admin');
 Route::get('member/home', 'homeController@memberIndex')->name('home.member');
 Route::resource('user', 'UserController');
+Route::resource('vehicle', 'VehicleController');
+Route::resource('category', 'CategoryController');

@@ -4,12 +4,12 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12" style="padding:0px;">
+          <div class="col-lg-12" style="padding:0px;">
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                 <a class="navbar-brand" href="#"><strong>Admin Panel</strong></a>
                 <ul class="nav justify-content-end">
                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Add Car</a>
+                        <a class="nav-link active" href="{{url('vehicle/create')}}">Add Car</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Car List</a>
