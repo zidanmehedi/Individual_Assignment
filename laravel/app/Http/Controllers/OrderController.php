@@ -14,7 +14,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        return view('member.payment.content');
     }
 
     /**
@@ -33,9 +33,20 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+        $pay = $req->pay;
+        //echo $pay;
+        $order = new order();
+        $order->uid = $req->session()->get('id');
+        $order->vid = $req->session()->pull('vid');
+        $order->period = $req->session()->pull('time');
+        $order->time = $req->session()->pull('date');
+        $order->total_cost = $req->session()->pull('tcost');
+        $order->payment = $pay;
+        //print_r($order);
+        $order->save();
+        return redirect()->route('home.member'); 
     }
 
     /**
@@ -46,7 +57,7 @@ class OrderController extends Controller
      */
     public function show(Request $req, $order)
     {
-        $time = $req->session()->get('time');
+        //$time = $req->session()->get('time');
     }
 
     /**

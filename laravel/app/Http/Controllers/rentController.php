@@ -17,12 +17,12 @@ class rentController extends Controller
     	//print_r($info);
     }
      public function finalize(Request $req){
-    	$req->session()->flash('time',$req->time);
-    	$req->session()->flash('vid',$req->vid);
-    	$req->session()->flash('tcost',$req->tcost);
-    	$req->session()->flash('category',$req->category);
-    	$req->session()->flash('date', date('Y-m-d'));
-    	return view('member.payment.content');
+    	$req->session()->put('time',$req->time);
+    	$req->session()->put('vid',$req->vid);
+    	$req->session()->put('tcost',$req->tcost);
+    	$req->session()->put('category',$req->category);
+    	$req->session()->put('date', date('Y-m-d'));
+    	return redirect('order');
     	//print_r($info);
     	//print_r($req->session()->all());
     }

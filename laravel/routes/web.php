@@ -25,3 +25,4 @@ Route::get('member/home', 'homeController@memberIndex')->name('home.member');
 Route::resource('user', 'UserController');
 Route::resource('vehicle', 'VehicleController');
 Route::resource('category', 'CategoryController');
+Route::resource('order', 'OrderController');
