@@ -56,6 +56,7 @@ class VehicleController extends Controller
             $veh->vname = $request->name;
             $veh->description = $request->description;
             $veh->cost = $request->cost;
+            $veh->status = 'available';
             $veh->cat_id = $cat->cat_id;
             $veh->save();
             $file->move('upload', $file->getClientOriginalName());
