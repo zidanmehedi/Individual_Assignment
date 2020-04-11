@@ -10,48 +10,46 @@
                     <label for="title"><strong>Vehicle Info</strong></label>
                 </div>
                 <div style="padding:10px;">
-                    <form action="{{url('vehicle/'.$veh->vid)}}" method="post">
+                    <form action="{{url('/vehicle/final')}}" method="post">
                         @csrf()
-                        @method('DELETE')
-                        <div class="row mt-4 mb-4">
-                            <div class="col">
-                                <div class="form-group" style="text-align:center">
-                                    <img src="/upload/{{$veh->image}}" alt="image" height="128px" width="256px" style="border:2px solid black;box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0, 0, 0, 0.50) ">
-                                </div>
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input type="text" class="form-control" name="name" value="{{$veh->name}} " readonly>
+                                    <input type="text" class="form-control" name="name" value="{{$data['name']}} " readonly>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="email">Cost/Hour</label>
-                                    <input type="text" class="form-control" name="cost" value="{{$veh->cost}}" readonly>
+                                    <label for="cost">Time(Hour)</label>
+                                    <input type="text" class="form-control" name="time" value="{{$data['time']}}" readonly>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="address">Description</label>
-                            <textarea name="desription" class="form-control" rows="3" readonly>{{$veh->description}}</textarea>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
                                     <label for="contact">Category</label>
-                                    <input type="text" class="form-control" name="category" value="{{$veh->cat_name}}" readonly>
+                                    <input type="text" class="form-control" name="category" value="{{$data['category']}}" readonly>
                                 </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="contact">Total Cost</label>
+                                    <input type="text" class="form-control" name="tcost" value="{{$data['cost']*$data['time']}}" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input type="hidden" name="vid" value="{{$data['vid']}}">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col">
                                 <div class="form-group mt-4" style=" width:100%">
-                                    <input class="btn btn-primary btn-sm" type="button" name="back" value="Back" onclick="backToMemberList()">&emsp;
-                                    <input class="btn btn-success btn-sm" type="submit" name="rent" value="Rent">
+                                    <input class="btn btn-danger btn-sm" type="button" name="back" value="Cancel" onclick="backToMemberList()">&emsp;
+                                    <input class="btn btn-success btn-sm" type="submit" name="rent" value="Final">
                                 </div>
                             </div>
                         </div>
@@ -63,5 +61,5 @@
 </div>
 @endsection
 @section('title')
-Admin Home
+Filalize Order
 @endsection

@@ -10,9 +10,8 @@
                     <label for="title"><strong>Vehicle Info</strong></label>
                 </div>
                 <div style="padding:10px;">
-                    <form action="{{url('vehicle/'.$veh->vid)}}" method="post">
+                    <form action="{{url('/vehicle/rent')}}" method="post">
                         @csrf()
-                        @method('DELETE')
                         <div class="row mt-4 mb-4">
                             <div class="col">
                                 <div class="form-group" style="text-align:center">
@@ -49,8 +48,13 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="contact">Rend Period(Hour)</label>
-                                    <input type="text" class="form-control" name="period">
+                                    <input type="text" class="form-control" name="time">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input type="hidden" name="vid" value="{{$veh->vid}}">
                             </div>
                         </div>
                         <div class="row mt-3">
