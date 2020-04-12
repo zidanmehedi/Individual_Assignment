@@ -5,20 +5,26 @@
 <div class="container-fluid">
     <div class="row">
           <div class="col-lg-12" style="padding:0px;">
-            <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-                <a class="navbar-brand" href="#"><strong>Admin Panel</strong></a>
+              <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+                <a class="navbar-brand" href="{{route('home.admin')}}"><strong>Admin Panel</strong></a>
                 <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{route('home.admin')}}">Home</a>
+                    </li>
                    <li class="nav-item">
                         <a class="nav-link active" href="{{url('vehicle')}}">Add Car</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{url('vehicle/create')}}">Car List</a>
+                        <a class="nav-link active" href="{{route('update.carlist')}}">Car List</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('user/create')}}">Member List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Blog</a>
+                        <a class="nav-link active" href="{{url('order/create')}}">All Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('blog/create')}}">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout.index')}}">Logout</a>

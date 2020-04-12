@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col">
                     <div class="mt-4" style="text-align:center;font-size:30px"><strong>Blog List</strong></div>
-                    <table class="table table-sm table-light table-hover mt-4" style="text-align:center; vertical-align: bottom;">
+                    <!-- <table class="table table-sm table-light table-hover mt-4" style="text-align:center; vertical-align: bottom;">
                         <thead class="thead-light">
                             <tr>
                                 <th>Username</th>
@@ -47,7 +47,25 @@
                             </tr>
                             @endforeach
                         </tbody>
-                    </table>
+                    </table> -->
+                     <div class="row">    
+                        @foreach($blog as $v)
+                        <div class="col col-lg-3 mt-5">
+                          <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                              <h5 class="card-header"><small>@</small>{{$v->username}}</h5>
+                              <div class="card-body text-secondary">
+                                <p class="card-text">{{$v->post}}</p>
+                                <a href="#" class="card-link">Delete</a>
+                              </div>
+                            </div>
+                            </div>
+                          @endforeach
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align: center">
+                            <a href="#">My Blogs</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

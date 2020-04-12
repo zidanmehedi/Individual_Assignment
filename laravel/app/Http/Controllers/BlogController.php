@@ -26,7 +26,7 @@ class BlogController extends Controller
      */
     public function create(Request $req)
     {
-        if($req->session()->get('id')==3){
+        if($req->session()->get('id')==1){
             $blog = DB::table('blogs')->join('user_info','user_info.id','blogs.uid')->get();
             return view('admin.blogHistory.content', ['blog'=>$blog]);
         }

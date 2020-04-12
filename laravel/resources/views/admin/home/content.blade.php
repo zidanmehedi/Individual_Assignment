@@ -6,8 +6,11 @@
     <div class="row">
         <div class="col-lg-12" style="padding:0px;">
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-                <a class="navbar-brand" href="#"><strong>Admin Panel</strong></a>
+                <a class="navbar-brand" href="{{route('home.admin')}}"><strong>Admin Panel</strong></a>
                 <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{route('home.admin')}}">Home</a>
+                    </li>
                    <li class="nav-item">
                         <a class="nav-link active" href="{{url('vehicle')}}">Add Car</a>
                     </li>
