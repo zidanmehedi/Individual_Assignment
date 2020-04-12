@@ -5,14 +5,20 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12" style="padding:0px;">
-            <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-                <a class="navbar-brand" href="#"><strong>Rent A Vehicle</strong></a>
+              <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+                <a class="navbar-brand" href="{{route('home.member')}}"><strong>Rent A Vehicle</strong></a>
                 <ul class="nav justify-content-end">
+                   <li class="nav-item">
+                        <a class="nav-link active" href="{{route('home.member')}}">Home</a>
+                    </li>
+                   <li class="nav-item">
+                        <a class="nav-link active" href="{{route('profile.member')}}">Profile</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="{{url('vehicle/create')}}">Vehicle List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">My Orders</a>
+                        <a class="nav-link active" href="{{url('order/create')}}">My Orders</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('blog')}}">Post Blog</a>
@@ -48,7 +54,14 @@
                             @endforeach
                         </tbody>
                     </table> -->
-                     <div class="row">    
+                     <div class="row">
+                     @if(count($blog)==0)
+                      <div class="row mt-5">
+                          <div class="col" style="text-align: center">
+                              <h2>No Blogs Available</h2>
+                          </div>
+                      </div>
+                      @else   
                         @foreach($blog as $v)
                         <div class="col col-lg-3 mt-5">
                           <div class="card border-secondary mb-3" style="max-width: 18rem;">
@@ -60,6 +73,7 @@
                             </div>
                           @endforeach
                     </div>
+                    @endif
                     <div class="row">
                         <div class="col mt-5 mb-5" style="text-align: center">
                             <div class="btn btn-outline-primary btn-sm"><a class="alert alert-link" href="{{route('blog.myBlog')}}" style="color: black">My Blogs</a></div>

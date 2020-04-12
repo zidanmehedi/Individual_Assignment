@@ -26,9 +26,10 @@ Route::group(['middleware'=>['sess']],function(){
 	Route::post('/vehicle/rent', 'rentController@rent');
 	Route::post('/vehicle/final', 'rentController@finalize');
 	Route::get('admin/home', 'homeController@adminIndex')->name('home.admin');
-	Route::get('member/home', 'homeController@memberIndex')->name('home.member');
+	Route::get('member/profile', 'homeController@memberIndex')->name('profile.member');
 	Route::resource('vehicle', 'VehicleController');
 	Route::resource('category', 'CategoryController');
 	Route::resource('order', 'OrderController');
 	Route::resource('blog', 'BlogController');
 });
+Route::get('/member/home', 'memberHomeController@index')->name('home.member');
