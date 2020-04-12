@@ -5,13 +5,13 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12" style="padding:0px;">
-              <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                 <a class="navbar-brand" href="{{route('home.admin')}}"><strong>Admin Panel</strong></a>
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
                         <a class="nav-link active" href="{{route('home.admin')}}">Home</a>
                     </li>
-                   <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link active" href="{{url('vehicle')}}">Add Car</a>
                     </li>
                     <li class="nav-item">
@@ -33,8 +33,30 @@
             </nav>
         </div>
         <div class="container justify-content-lg-center">
-            <div class="row">
+            <div class="row mt-5" style="text-align:center">
                 <div class="col">
+                    <h3>Select A Category</h3>
+                </div>
+            </div>
+            <form class="form-group" action="" method="post">
+               @csrf()
+                <div class="row mt-3">
+                    <div class="col">
+                        <select class="custom-select my-1 mr-sm-2" name="category">
+                            <option selected>Choose</option>
+                            @foreach($cat as $c)
+                            <option value="{{$c->cat_id}}">{{$c->cat_name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-lg-1 mt-1">
+                        <input class="form-control btn btn-primary btn-sm" type="submit" name="filter" value="Filter">
+                    </div>
+
+                </div>
+            </form>
+            <div class="row">
+                <div class="col" id="getList">
                     <div class="mt-4" style="text-align:center;font-size:30px"><strong>Vehicles List</strong></div>
                     <table class="table table-sm table-light table-hover mt-4" style="text-align:center; vertical-align: bottom;">
                         <thead class="thead-light">

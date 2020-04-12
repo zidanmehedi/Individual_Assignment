@@ -21,6 +21,7 @@ Route::post('/login', 'loginController@verify');
 Route::resource('user', 'UserController');
 Route::group(['middleware'=>['sess']],function(){
 	Route::get('/vehicle/update/{id}', 'vehicleUpdateController@index')->name('update.index');
+    Route::post('/vehicle/carlist', 'vehicleUpdateController@vlist');
 	Route::get('/vehicle/carlist', 'vehicleUpdateController@carlist')->name('update.carlist');
 	Route::get('/blog/myBlog', 'personalBlogController@index')->name('blog.myBlog');
 	Route::post('/vehicle/rent', 'rentController@rent');

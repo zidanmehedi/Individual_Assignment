@@ -27,14 +27,14 @@ class VehicleRequest extends FormRequest
             'img'=>'required|image',
             'cost'=>'required|numeric',
             'description'=>'required',
-            'vname'=>['required'],
+            'name'=>['required'],
             //'category'=>'required'
         ];
     }
     public function messages()
     {
         return [
-            'vname.required'=>'You must provide a valid Vehicle Name',
+            'name.required'=>'You must provide a valid Vehicle Name',
             'img.required'=>'You must provide a valid Image File',
             'cost.required'=>'You must provide a valid Cost',
             'description.required'=>'You must provide a valid Description',

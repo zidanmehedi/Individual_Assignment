@@ -29,11 +29,13 @@ class VehicleController extends Controller
     public function create(Request $req)
         
     {
+        $cat = category::all();
         $veh = DB::table('vehicles')
                  ->join('category','vehicles.cat_id','=','category.cat_id')
+                 ->where('status','available')
                  ->get();
-        return view('member.vehicleList.content', ['veh'=>$veh]);
-        //print_r($veh);
+        return view('member.vehicleList.content', ['veh'=>$veh, 'cat'=>$cat]);
+        //print_r($cat);
     }
 
     /**
@@ -61,6 +63,7 @@ class VehicleController extends Controller
             $veh->save();
             $file->move('upload', $file->getClientOriginalName());
             return redirect()->route('home.admin');
+            //print_r($veh);
         }
     }
 

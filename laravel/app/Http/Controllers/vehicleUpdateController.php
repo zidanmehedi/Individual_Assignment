@@ -21,10 +21,24 @@ class vehicleUpdateController extends Controller
     }
     public function carlist(Request $req)
     {
+        $cat = category::all();
         $veh = DB::table('vehicles')
                  ->join('category','vehicles.cat_id','=','category.cat_id')
                  ->get();
-        return view('admin.vehicleList.content', ['veh'=>$veh]);
-        //print_r($veh);
+        return view('admin.vehicleList.content', ['veh'=>$veh, 'cat'=>$cat]);
+        //print_r($cat);
+    }
+    
+    public function vlist(Request $req)
+    {
+        $getCat = $req->category;
+       $cat = category::all();
+        $veh = DB::table('vehicles')
+                 ->join('category','vehicles.cat_id','=','category.cat_id')
+                 ->where('vehicles.cat_id',$getCat)
+                 ->get();
+        return view('admin.vehicleList.content', ['veh'=>$veh, 'cat'=>$cat]);
+        //print($veh);
     }
 }
+

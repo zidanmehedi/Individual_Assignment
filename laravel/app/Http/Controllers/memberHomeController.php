@@ -14,6 +14,7 @@ class memberHomeController extends Controller
      {
         $veh = DB::table('vehicles')
                  ->join('category','vehicles.cat_id','=','category.cat_id')
+                 ->where('status','available')
                  ->get();
         return view('member.generalPage.content', ['veh'=>$veh]);
         //print_r($veh);
