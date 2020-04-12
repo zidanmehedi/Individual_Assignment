@@ -122,6 +122,6 @@ class VehicleController extends Controller
     {
         vehicle::destroy($vehicle);
         //echo $getUser->name;
-        return redirect('vehicle/create');
+        return redirect('admin/vehicle/carlist');
     }
 }

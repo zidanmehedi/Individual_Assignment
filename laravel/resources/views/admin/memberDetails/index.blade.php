@@ -15,6 +15,11 @@
 
 <body>
     @yield('content')
+    <script>
+        function backToMemberList(){
+            
+        }
+    </script>
 </body>
 
 </html>

@@ -48,6 +48,7 @@ class vehicleUpdateController extends Controller
         $cat = category::all();
         $veh = DB::table('vehicles')
                  ->join('category','vehicles.cat_id','=','category.cat_id')
+                 ->where('status','available')
                  ->get();
         return view('member.vehicleList.content', ['veh'=>$veh, 'cat'=>$cat]);
         //print_r($cat);
@@ -65,4 +66,3 @@ class vehicleUpdateController extends Controller
         //print($veh);
     }
 }
-

@@ -2,9 +2,9 @@
 
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="mt-3 mb-5">
+<div class="container ">
+    <div class="row mt-5 justify-content-lg-center justify-content-sm-center justify-content-md-center">
+        <div class="col-lg-4 col-md-4 col-sm-4 mt-3 mb-5">
             <div style="border:1px solid #D3D3D3; border-radius:5px; box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
                 <div style="width:100%; text-align:center; padding:10px; font-family:arial; font-size:25px; font-style:bold; background-color:#D3D3D3">
                     <label for="title"><strong>Account Info</strong></label>
@@ -48,19 +48,22 @@
                             </div>
                         </div>
                         <div class="row mt-3">
-                           <div class="col">
+                            <div class="col">
                                 <div class="form-group mt-4" style=" width:100%">
-                                    <input class="btn btn-primary btn-sm" type="button" name="register" value="Back" onclick="backToMemberList()">&emsp;
-                                    <input class="btn btn-danger btn-sm" type="submit" name="register" value="Remove">
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                                    <div class="form-group mt-4" style=" width:100%">
+                                        <input class="btn btn-danger btn-sm" type="submit" name="delete" value="Remove">
+                    </form>&emsp;
+                    <button class=" btn btn-primary btn-sm" onclick="backToMemberList()" style='padding-left:-50px'>Back</button>
                 </div>
             </div>
         </div>
     </div>
-    @endsection
-    @section('title')
-    Admin Home
-    @endsection
+    </form>
+</div>
+</div>
+</div>
+</div>
+@endsection
+@section('title')
+Admin Home
+@endsection

@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-lg-center justify-content-md-center justify-content-sm-center">
+    <div class="row mt-5 justify-content-lg-center justify-content-md-center justify-content-sm-center">
         <div class="col-lg-6 col-md-6 col-sm-6 mt-3 mb-5">
             <div style="border:1px solid #D3D3D3; border-radius:5px; box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
                 <div style="width:100%; text-align:center; padding:10px; font-family:arial; font-size:25px; font-style:bold; background-color:#D3D3D3">

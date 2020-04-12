@@ -15,6 +15,11 @@
 
 <body>
     @yield('content')
+    <script>
+        function backToCarList(){
+            window.location='http://localhost:3000/member/vehicle/carlist';
+        }
+    </script>
 </body>
 
 </html>
