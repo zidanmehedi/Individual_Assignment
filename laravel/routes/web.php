@@ -22,6 +22,7 @@ Route::resource('user', 'UserController');
 Route::group(['middleware'=>['sess']],function(){
 	Route::get('/vehicle/update/{id}', 'vehicleUpdateController@index')->name('update.index');
 	Route::get('/vehicle/carlist', 'vehicleUpdateController@carlist')->name('update.carlist');
+	Route::get('/blog/myBlog', 'personalBlogController@index')->name('blog.myBlog');
 	Route::post('/vehicle/rent', 'rentController@rent');
 	Route::post('/vehicle/final', 'rentController@finalize');
 	Route::get('admin/home', 'homeController@adminIndex')->name('home.admin');

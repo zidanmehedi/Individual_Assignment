@@ -55,15 +55,15 @@
                               <h5 class="card-header"><small>@</small>{{$v->username}}</h5>
                               <div class="card-body text-secondary">
                                 <p class="card-text">{{$v->post}}</p>
+                                <form action="{{url('blog/'.$v->bid)}}" method="post">
+                                        @csrf()
+                                        @method('DELETE')
+                                        <input type="submit" class="btn btn-danger btn-sm" name="delete" value="Delete">
+                                </form>
                               </div>
                             </div>
                             </div>
                           @endforeach
-                    </div>
-                    <div class="row">
-                        <div class="col mt-5 mb-5" style="text-align: center">
-                            <div class="btn btn-outline-primary btn-sm"><a class="alert alert-link" href="{{route('blog.myBlog')}}" style="color: black">My Blogs</a></div>
-                        </div>
                     </div>
                 </div>
             </div>
