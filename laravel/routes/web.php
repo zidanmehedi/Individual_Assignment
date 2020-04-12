@@ -20,9 +20,11 @@ Route::get('/logout', 'logoutController@index')->name('logout.index');
 Route::post('/login', 'loginController@verify');
 Route::resource('user', 'UserController');
 Route::group(['middleware'=>['sess']],function(){
-	Route::get('/vehicle/update/{id}', 'vehicleUpdateController@index')->name('update.index');
-    Route::post('/vehicle/carlist', 'vehicleUpdateController@vlist');
-	Route::get('/vehicle/carlist', 'vehicleUpdateController@carlist')->name('update.carlist');
+	Route::get('admin/vehicle/update/{id}', 'vehicleUpdateController@admin')->name('update.index');
+    Route::post('admin/vehicle/carlist', 'vehicleUpdateController@avlist');
+	Route::get('admin/vehicle/carlist', 'vehicleUpdateController@acarlist')->name('update.carlist');
+    Route::post('member/vehicle/carlist', 'vehicleUpdateController@mvlist');
+	Route::get('member/vehicle/carlist', 'vehicleUpdateController@mcarlist')->name('update.mcarlist');
 	Route::get('/blog/myBlog', 'personalBlogController@index')->name('blog.myBlog');
 	Route::post('/vehicle/rent', 'rentController@rent');
 	Route::post('/vehicle/final', 'rentController@finalize');

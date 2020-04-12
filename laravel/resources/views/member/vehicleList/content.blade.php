@@ -6,31 +6,31 @@
     <div class="row">
         <div class="col-lg-12" style="padding:0px;">
             <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-                <a class="navbar-brand" href="{{route('home.member')}}"><strong>Rent A Vehicle</strong></a>
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{route('home.member')}}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{route('profile.member')}}">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{url('vehicle/create')}}">Vehicle List</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{url('order/create')}}">My Orders</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url('blog')}}">Post Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url('blog/create')}}">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('logout.index')}}">Logout</a>
-                    </li>
-                </ul>
-            </nav>
+                  <a class="navbar-brand" href="{{route('home.member')}}"><strong>Rent A Vehicle</strong></a>
+                  <ul class="nav justify-content-end">
+                      <li class="nav-item">
+                          <a class="nav-link active" href="{{route('home.member')}}">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active" href="{{route('profile.member')}}">Profile</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active" href="{{route('update.mcarlist')}}">Vehicle List</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active" href="{{url('order/create')}}">My Orders</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{url('blog')}}">Post Blog</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{url('blog/create')}}">Blog</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{route('logout.index')}}">Logout</a>
+                      </li>
+                  </ul>
+              </nav>
         </div>
         <div class="container justify-content-lg-center">
             <div class="row mt-5" style="text-align:center">

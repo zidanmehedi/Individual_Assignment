@@ -15,7 +15,7 @@
                         <a class="nav-link active" href="{{route('profile.member')}}">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{url('vehicle/create')}}">Vehicle List</a>
+                        <a class="nav-link active" href="{{route('update.mcarlist')}}">Vehicle List</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="{{url('order/create')}}">My Orders</a>

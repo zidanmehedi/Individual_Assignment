@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class vehicleUpdateController extends Controller
 {
-      public function index(Request $req,$vehicle)
+      public function admin(Request $req,$vehicle)
     {
         $veh = DB::table('vehicles')
                  ->join('category','vehicles.cat_id','=','category.cat_id')
@@ -19,7 +19,7 @@ class vehicleUpdateController extends Controller
                  ->first();
             return view('admin.vehicleUpdate.content', ['veh'=>$veh]);
     }
-    public function carlist(Request $req)
+    public function acarlist(Request $req)
     {
         $cat = category::all();
         $veh = DB::table('vehicles')
@@ -29,15 +29,39 @@ class vehicleUpdateController extends Controller
         //print_r($cat);
     }
     
-    public function vlist(Request $req)
+    public function avlist(Request $req)
     {
         $getCat = $req->category;
-       $cat = category::all();
+        $cat = category::all();
         $veh = DB::table('vehicles')
                  ->join('category','vehicles.cat_id','=','category.cat_id')
                  ->where('vehicles.cat_id',$getCat)
                  ->get();
+        if($req->session()->get('id')==2){
+            return view('member.vehicleList.content', ['veh'=>$veh, 'cat'=>$cat]);
+        }
         return view('admin.vehicleList.content', ['veh'=>$veh, 'cat'=>$cat]);
+        //print($veh);
+    }
+     public function mcarlist(Request $req)
+    {
+        $cat = category::all();
+        $veh = DB::table('vehicles')
+                 ->join('category','vehicles.cat_id','=','category.cat_id')
+                 ->get();
+        return view('member.vehicleList.content', ['veh'=>$veh, 'cat'=>$cat]);
+        //print_r($cat);
+    }
+    
+    public function mvlist(Request $req)
+    {
+        $getCat = $req->category;
+        $cat = category::all();
+        $veh = DB::table('vehicles')
+                 ->join('category','vehicles.cat_id','=','category.cat_id')
+                 ->where('vehicles.cat_id',$getCat)
+                 ->get();
+        return view('member.vehicleList.content', ['veh'=>$veh, 'cat'=>$cat]);
         //print($veh);
     }
 }
