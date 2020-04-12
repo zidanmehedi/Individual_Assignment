@@ -54,19 +54,31 @@
                           @endforeach
                       </tbody>
                   </table> -->
-                      <div class="row">    
-                        @foreach($blog as $v)
-                        <div class="col col-lg-3 mt-5">
-                          <div class="card border-secondary mb-3" style="max-width: 18rem;">
-                              <h5 class="card-header"><small>@</small>{{$v->username}}</h5>
-                              <div class="card-body text-secondary">
-                                <p class="card-text">{{$v->post}}</p>
-                                <a href="#" class="card-link">Delete</a>
-                              </div>
-                            </div>
-                            </div>
-                          @endforeach
+                  @if(count($blog)==0)
+                  <div class="row mt-5">
+                      <div class="col" style="text-align: center">
+                          <h2>No Blogs Available</h2>
+                      </div>
                   </div>
+                  @else
+                      <div class="row">    
+                            @foreach($blog as $v)
+                            <div class="col col-lg-3 mt-5">
+                              <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                                  <h5 class="card-header"><small>@</small>{{$v->username}}</h5>
+                                  <div class="card-body text-secondary">
+                                    <p class="card-text">{{$v->post}}</p>
+                                    <form action="{{url('blog/'.$v->bid)}}" method="post">
+                                        @csrf()
+                                        @method('DELETE')
+                                        <input type="submit" class="btn btn-danger btn-sm" name="delete" value="Delete">
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                              @endforeach
+                      </div>
+                  @endif
                 </div>
             </div>
         </div>

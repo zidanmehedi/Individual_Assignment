@@ -89,8 +89,9 @@ class BlogController extends Controller
      * @param  \App\blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(blog $blog)
+    public function destroy($blog)
     {
-        //
+        blog::destroy($blog);
+        return redirect('blog/create');
     }
 }

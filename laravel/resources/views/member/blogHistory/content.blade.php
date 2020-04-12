@@ -55,7 +55,6 @@
                               <h5 class="card-header"><small>@</small>{{$v->username}}</h5>
                               <div class="card-body text-secondary">
                                 <p class="card-text">{{$v->post}}</p>
-                                <a href="#" class="card-link">Delete</a>
                               </div>
                             </div>
                             </div>
